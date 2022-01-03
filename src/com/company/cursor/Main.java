@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String login = "login132_1";
+        String login = "login";
         String password = "pass_1";
         String confirmPassword = "pass_1";
         try {
@@ -25,6 +25,10 @@ public class Main {
         if (password.length() > 20 || confirmPassword.length() > 20) {
             throw new WrongPasswordException("To much symbols in password");
         }
+
+        String checkList = "(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[_])(?=\\S+$).{5,20}";
+        if (login.matches(checkList))
+            System.out.println(true);
         String[] validSymbols = new String[63];
         String[] loginMas = login.split("");
         String[] passwordMas = password.split("");
