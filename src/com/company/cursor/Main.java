@@ -9,7 +9,7 @@ public class Main {
 
         String login = "login";
         String password = "pass";
-        String confirmPassword = "pass";
+        String confirmPassword = "pas";
         try {
             check(login,password,confirmPassword);
         }
@@ -18,7 +18,7 @@ public class Main {
         }catch (WrongPasswordException e){
             e.printStackTrace();
         }finally {
-            System.out.println("All is okay");
+            System.out.println("End try-catch block");
         }
     }
     public static void check(String login,String password,String confirmPassword) throws WrongPasswordException, WrongLoginException {
@@ -27,6 +27,11 @@ public class Main {
         }
         if(password.length()>20 || confirmPassword.length()>20){
             throw new WrongPasswordException("To much symbols in password");
+        }
+        String an = "Andrii_Tysiak66";
+        final String regexLogin = "^.*(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_]).*$";
+        if(login.matches(regexLogin)) {
+            System.out.println("hello");
         }
         String[] validSymbols = new String[63];
         String[] loginMas = login.split("");
