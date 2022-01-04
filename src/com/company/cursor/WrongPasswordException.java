@@ -1,6 +1,6 @@
 package com.company.cursor;
 
-public class WrongPasswordException extends  Exception{
+public class WrongPasswordException extends Exception {
 
     public WrongPasswordException() {
         super();
